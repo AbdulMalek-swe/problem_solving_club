@@ -20,8 +20,6 @@ int main() {
     
     
     while(true){
-       
- 
            int dm = 0;
            for(int i=0;i<n;i++){
              int g = x^v[i];
