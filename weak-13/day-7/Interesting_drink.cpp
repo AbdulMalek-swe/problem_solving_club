@@ -5,14 +5,28 @@ using namespace std;
     ios::sync_with_stdio(0); \
     cin.tie(0);              \
     cout.tie(0);
-
-void binary_search(vector<int> v)
+ 
+void binary_search(vector<int> arr)
 {
-    int l, r;
-    scanf("%d %d", &l, &r);
-    auto v2 = upper_bound(v.begin(), v.end(), r);
-    auto v3 = lower_bound(v.begin(), v.end(), l);
-    printf("%d ", (int)(v2 - v3));
+    int r;
+    scanf("%d",&r); 
+     int low = 0, high = arr.size() - 1;
+      int ans = -1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        
+        if (arr[mid] <= r) {
+         low=mid+1;
+         ans = low;
+        } 
+        else high = mid - 1;
+    }
+    if(ans==-1){
+      cout<<0<<ln;
+    }else{
+      cout<<ans<<ln;
+    }
+     
 }
 int main()
 {
